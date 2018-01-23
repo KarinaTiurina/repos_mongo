@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h3>
   <strong>Name:</strong>
   <%= @repository.name %>
-</p>
+</h3>
+
+<hr />
+
+<ol>
+  <% @items.each do |item| %>
+    <li><%= item.name %></li>
+  <% end %>
+</ol>
 
 <%= link_to 'Edit', edit_repository_path(@repository) %> |
 <%= link_to 'Back', repositories_path %>
