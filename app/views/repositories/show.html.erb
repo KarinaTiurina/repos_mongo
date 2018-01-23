@@ -17,7 +17,7 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.name %></td>
+        <td><%= link_to item.name, repository_item_path(@repository, item) %></td>
         <td><%= link_to 'Destroy', repository_item_path(@repository, item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

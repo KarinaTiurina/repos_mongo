@@ -13,3 +13,12 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+// $(document).ready ->
+//   $.ajax(
+//     url: $("pre").data("source")
+//     context: document.body
+//   ).done (response) ->
+//     $("pre").html response
+//     return
+//   return

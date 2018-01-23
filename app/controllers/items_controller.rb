@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :set_repository, only: [:new, :create, :destroy]
-  before_action :set_item, only: [:destroy]
+  before_action :set_repository, only: [:show, :new, :create, :destroy]
+  before_action :set_item, only: [:show, :destroy]
+
+  def show
+    @file_content = File.read("#{Rails.root}/public" + @item.source_file.to_s)
+  end
 
   def new
     @new_item = @repository.items.build(params[:item])
@@ -32,7 +36,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-      params.require(:item).permit(:name)
+      params.require(:item).permit(:name, :source_file)
   end
 
   def set_repository
