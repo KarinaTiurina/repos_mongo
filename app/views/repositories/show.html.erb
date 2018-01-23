@@ -1,17 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h3>
-  <strong>Name:</strong>
+<h1>
   <%= @repository.name %>
-</h3>
+</h1>
 
 <hr />
 
-<ol>
-  <% @items.each do |item| %>
-    <li><%= item.name %></li>
-  <% end %>
-</ol>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= link_to 'Destroy', repository_item_path(@repository, item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<strong><%= link_to 'New item', new_repository_item_path(@repository) %></strong>
+
+<br />
+<br />
 
 <%= link_to 'Edit', edit_repository_path(@repository) %> |
 <%= link_to 'Back', repositories_path %>
