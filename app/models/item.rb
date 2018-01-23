@@ -1,8 +1,8 @@
-class Repository
+class Item
   include Mongoid::Document
   field :name, type: String
 
   validates_presence_of :name
 
-  embeds_many :items
+  embedded_in :repository
 end
