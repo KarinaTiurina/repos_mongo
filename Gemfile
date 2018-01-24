@@ -38,6 +38,7 @@ group :development, :test do
   gem 'mongoid-rspec'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
 end
 
 group :development do
