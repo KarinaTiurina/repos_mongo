@@ -10,6 +10,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= link_to item.name, repository_item_path(@repository, item) %></td>
+        <td><%= item.type %></td>
         <td><%= link_to 'Destroy', repository_item_path(@repository, item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

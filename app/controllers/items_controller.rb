@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-      params.require(:item).permit(:name, :source_file)
+      params.require(:item).permit(:name, :source_file, :type)
   end
 
   def set_repository
