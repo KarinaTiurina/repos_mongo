@@ -1,0 +1,9 @@
+<h1><%= @repository.name %></h1>
+
+<hr />
+
+<h3>New Item</h3>
+
+<%= render 'form', item: @new_item %>
+
+<%= link_to 'Back', repository_path(@repository) %>

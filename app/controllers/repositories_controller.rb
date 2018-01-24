@@ -10,6 +10,7 @@ class RepositoriesController < ApplicationController
   # GET /repositories/1
   # GET /repositories/1.json
   def show
+    @items = @repository.items
   end
 
   # GET /repositories/new
