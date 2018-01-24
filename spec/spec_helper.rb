@@ -13,6 +13,7 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'rails/mongoid'
 require 'mongoid-rspec'
 
 RSpec.configure do |config|
