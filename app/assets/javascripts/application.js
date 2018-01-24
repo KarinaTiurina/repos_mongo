@@ -11,14 +11,17 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery3
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-// $(document).ready ->
-//   $.ajax(
-//     url: $("pre").data("source")
-//     context: document.body
-//   ).done (response) ->
-//     $("pre").html response
-//     return
-//   return
+$(document).on("focusout","select.item_type",function(){
+    var type = $('select.item_type').val();
+
+    if (type == 'script') {
+    	$('#command').show("slow");
+    } else {
+    	$('#command').hide(1000);
+    }
+});
