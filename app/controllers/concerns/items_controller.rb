@@ -11,15 +11,14 @@ module ItemsController
     end
 
     def new
-      # @new_item = ItemTypeChecking.build_item(self.class, repository)
-      @new_item = @repository.item_files.build(params[:item_file])
+      @new_item = ItemTypeChecking.build_new_item(self.class, @repository, request)
     end
 
     def create
       @new_item = @repository.item_files.build(item_file_params)
 
       respond_to do |format|
-        if @new_item_file.save
+        if @new_item.save
           format.html { redirect_to @repository, notice: 'Item was successfully uploaded.' }
           format.json { render :show, status: :created, location: @repository }
         else
