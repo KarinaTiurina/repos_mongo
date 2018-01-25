@@ -3,7 +3,7 @@ class ItemFilesController < ApplicationController
 
   private
 
-  def item_file_params
+  def item_params
       params.require(:item_file).permit(:name, :source_file)
   end
 end

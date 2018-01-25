@@ -35,7 +35,7 @@ class ItemScriptsController < ApplicationController
 
   private
 
-  def item_script_params
+  def item_params
       params.require(:item_script).permit(:name, :source_file, :command)
   end
 

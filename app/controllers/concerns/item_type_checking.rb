@@ -12,4 +12,10 @@ module ItemTypeChecking
 
     return repository.item_files.build(request.params[:item_script]) if controller_class_name.to_s == 'ItemScriptsController'
   end
+
+  def self.build_to_create_item(controller_class_name, repository, item_params)
+    return repository.item_files.build(item_params) if controller_class_name.to_s == 'ItemFilesController'
+
+    return repository.item_files.build(item_params) if controller_class_name.to_s == 'ItemScriptsController'
+  end
 end

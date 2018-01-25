@@ -15,8 +15,7 @@ module ItemsController
     end
 
     def create
-      @new_item = @repository.item_files.build(item_file_params)
-
+      @new_item = ItemTypeChecking.build_to_create_item(self.class, @repository, item_params)
       respond_to do |format|
         if @new_item.save
           format.html { redirect_to @repository, notice: 'Item was successfully uploaded.' }
