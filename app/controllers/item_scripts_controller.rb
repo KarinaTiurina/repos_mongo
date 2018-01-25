@@ -7,7 +7,7 @@ class ItemScriptsController < ApplicationController
   end
 
   def new
-    @new_item_script = @repository.item_scripts.build(params[:item])
+    @new_item_script = @repository.item_scripts.build(params[:item_script])
   end
 
   def create
@@ -25,7 +25,7 @@ class ItemScriptsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
+    @item_script.destroy
 
     respond_to do |format|
       format.html { redirect_to repository_url(@repository), notice: 'Item was successfully destroyed.' }

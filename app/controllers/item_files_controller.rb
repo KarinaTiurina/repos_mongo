@@ -7,7 +7,7 @@ class ItemFilesController < ApplicationController
   end
 
   def new
-    @new_item_file = @repository.item_files.build(params[:item])
+    @new_item_file = @repository.item_files.build(params[:item_file])
   end
 
   def create

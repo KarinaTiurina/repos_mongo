@@ -1,10 +1,10 @@
 <%= form_for [@repository, item_file] do |form| %>
-  <% if item.errors.any? %>
+  <% if item_file.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <h2><%= pluralize(item_file.errors.count, "error") %> prohibited this item from being saved:</h2>
 
       <ul>
-      <% item.errors.full_messages.each do |message| %>
+      <% item_file.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
