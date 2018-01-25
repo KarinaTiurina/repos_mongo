@@ -1,4 +1,4 @@
-<%= form_for [@repository, item] do |form| %>
+<%= form_for [@repository, item_script] do |form| %>
   <% if item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -12,25 +12,18 @@
   <% end %>
 
   <div class="field">
-    <select name="item[type]" id="item_type" class="item_type">
-      <option value="file">File</option>
-      <option value="script">Script</option>
-    </select>
-  </div>
-
-  <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :item_name %>
+    <%= form.text_field :name, id: :item_script_name %>
   </div>
 
   <div class="field">
     <%= form.label :source_file %>
-    <%= form.file_field :source_file, id: :item_source_file %>
+    <%= form.file_field :source_file, id: :item_script_source_file %>
   </div>
 
-  <div class="field" id="command" style="display: none">
+  <div class="field" id="command">
     <%= form.label :command %>
-    <%= form.text_field :command, id: :item_command %>
+    <%= form.text_field :command, id: :item_script_command %>
   </div>
 
   <div class="actions">
