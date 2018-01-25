@@ -1,0 +1,32 @@
+<%= form_for [@repository, item_script] do |form| %>
+  <% if item_script.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item_script.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item_script.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :item_script_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source_file %>
+    <%= form.file_field :source_file, id: :item_script_source_file %>
+  </div>
+
+  <div class="field" id="command">
+    <%= form.label :command %>
+    <%= form.text_field :command, id: :item_script_command %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

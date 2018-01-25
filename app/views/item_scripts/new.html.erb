@@ -1,0 +1,9 @@
+<h1><%= @repository.name %></h1>
+
+<hr />
+
+<h3>New Script</h3>
+
+<%= render 'form', item_script: @new_item_script %>
+
+<%= link_to 'Back', repository_path(@repository) %>

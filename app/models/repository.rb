@@ -4,5 +4,6 @@ class Repository
 
   validates_presence_of :name
 
-  embeds_many :items
+  embeds_many :item_files
+  embeds_many :item_scripts
 end
