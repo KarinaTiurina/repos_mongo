@@ -23,8 +23,11 @@ RSpec.describe RepositoriesController, type: :controller do
 
   # describe '#create' do
   #   it 'creates repository' do
-  #     post :create
+  #     post :create, repository: {name: 'repo2'}
+
   #     repository = assigns(:repository)
+
+  #     expect(repository.name).ro eq('repo2')
 
   #     expect(response).to redirect_to(root_path)
   #   end
