@@ -1,12 +1,8 @@
 class ItemScript
   include Mongoid::Document
-  field :name, type: String
-  field :source_file, type: String
+  include Item
+
   field :command, type: String
 
-  validates_presence_of :name, :source_file, :command
-
-  embedded_in :repository
-
-  mount_uploader :source_file, SourceUploader
+  validates_presence_of :command
 end
