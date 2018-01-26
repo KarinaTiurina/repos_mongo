@@ -1,4 +1,4 @@
-<%= form_with(model: repository, local: true) do |form| %>
+<%= form_with(model: repository, local: true, :html => {:id => "repository_form" }) do |form| %>
   <% if repository.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(repository.errors.count, "error") %> prohibited this repository from being saved:</h2>

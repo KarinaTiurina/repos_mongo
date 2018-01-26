@@ -1,3 +1,11 @@
+$(document).on 'turbolinks:load', ->
+  $( "#repository_form" ).submit (event)->
+    console.log('submit')
+    name = $("#repository_name").val()
+    App.repository.load(name)
+    event.preventDefault()
+    window.location.replace("/");
+
 App.repository = App.cable.subscriptions.create "RepositoryChannel",
   connected: ->
     # Called when the subscription is ready for use on the server
