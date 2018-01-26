@@ -12,7 +12,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="repositories">
     <% @repositories.each do |repository| %>
       <tr>
         <td><%= link_to repository.name, repository %></td>

@@ -9,7 +9,8 @@ App.repository = App.cable.subscriptions.create "RepositoryChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    console.log('Recieved message: ' + data['message'])
+    console.log('Recieved message: ' + data['repository'])
+    $('#repositories').append data['repository']
 
-  load: (message) ->
-    @perform 'load', message: message
+  load: (name) ->
+    @perform 'load', name: name

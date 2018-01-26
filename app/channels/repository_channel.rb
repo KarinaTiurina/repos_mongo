@@ -14,6 +14,8 @@ class RepositoryChannel < ApplicationCable::Channel
   def load(data)
     logger.info "RepositoryChannel, load: #{data.inspect}"
 
-    ActionCable.server.broadcast 'repository_channel', message: 'Hello from server!'
+    RepoService.new(name: data['name']).perform
+    puts 'load data'
+    # ActionCable.server.broadcast 'repository_channel', message: 'Hello from server!'
   end
 end
