@@ -14,8 +14,12 @@ class ItemFileChannel < ApplicationCable::Channel
   end
 
   def load(data)
+    logger.info "********************************************************************"
     logger.info "ItemFileChannel, load: #{data.inspect}"
+    logger.info "********************************************************************"
 
-    ActionCable.server.broadcast "item_file_channel_#{@repository._id}", message: 'Hello from server!'
+    ItemFileService.new(
+      repository: @repository, name: data['name'], source_file: data['source_file']
+    ).perform
   end
 end

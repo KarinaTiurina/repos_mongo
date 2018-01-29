@@ -5,4 +5,6 @@ class ItemScript
   field :command, type: String
 
   validates_presence_of :command
+
+  mount_uploader :source_file, SourceUploader
 end

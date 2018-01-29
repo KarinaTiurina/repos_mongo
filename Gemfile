@@ -58,3 +58,9 @@ gem 'mongoid', '~> 6.1.0'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 gem 'jquery-rails'
+
+gem 'carrierwave-base64'
+gem "carrierwave-mongoid"
+
+gem 'shrine'
+gem "shrine-mongoid"
