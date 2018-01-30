@@ -2,7 +2,7 @@ require 'spec_helper'
 
 shared_examples_for "item" do
   let(:model) { described_class } # the class that includes the concern
-  let(:test_repository) { FactoryGirl.create(:repository) }
+  let(:test_repository) { FactoryBot.create(:repository) }
 
   context 'document check' do
     it { is_expected.to be_mongoid_document }
