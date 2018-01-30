@@ -10,7 +10,6 @@ jQuery(document).on 'turbolinks:load', ->
     command = $("#item_script_command").val()
 
     reader = new FileReader()
-    file_name = $("#item_script_source_file").get(0).files[0].name
     reader.onload = ->
       App.item_script.load(name, reader.result, command)
       window.location.replace("/repositories/" + repo.data('repository-id'));
@@ -18,9 +17,6 @@ jQuery(document).on 'turbolinks:load', ->
     reader.readAsDataURL $("#item_script_source_file").get(0).files[0]
 
     event.preventDefault()
-
-recievedUrl = (source_file) ->
-  source_file = fr.result
 
 createItemFileChannel = (repoId) ->
   App.item_script = App.cable.subscriptions.create { channel: "ItemScriptChannel", repoId: repoId },
