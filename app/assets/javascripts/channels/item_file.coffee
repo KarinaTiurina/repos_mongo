@@ -34,7 +34,7 @@ createItemFileChannel = (repoId) ->
     received: (data) ->
       # Called when there's incoming data on the websocket for this channel
       console.log('Recieved message: ' + data['item_file'])
-      $('#item_files').append data['item_file']
+      $('#items').append data['item_file']
 
     load: (name, source_file) ->
       console.log("item_file load")
