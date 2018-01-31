@@ -58,3 +58,5 @@ gem 'mongoid', '~> 6.1.0'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 gem 'jquery-rails'
+
+gem 'name_helper'
