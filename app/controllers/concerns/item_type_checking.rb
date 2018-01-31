@@ -2,16 +2,16 @@ module ItemTypeChecking
   extend ActiveSupport::Concern
 
   def self.set_item(controller_class_name, repository, request)
-    return repository.method(items(controller_class_name)).call.find(request.params[:id])
+    repository.method(items(controller_class_name)).call.find(request.params[:id])
   end
 
   def self.build_new_item(controller_class_name, repository, request)
     current_items = items(controller_class_name)
-    return repository.method(current_items).call.build(request.params[current_items.singularize.to_sym])
+    repository.method(current_items).call.build(request.params[current_items.singularize.to_sym])
   end
 
   def self.build_to_create_item(controller_class_name, repository, item_params)
-    return repository.method(items(controller_class_name)).call.build(item_params)
+    repository.method(items(controller_class_name)).call.build(item_params)
   end
 
   private
