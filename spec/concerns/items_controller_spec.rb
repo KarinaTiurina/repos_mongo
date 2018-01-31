@@ -3,8 +3,8 @@ require 'spec_helper'
 shared_examples_for "items_controller" do
   let(:model) { described_class } # the class that includes the concern
 
-  let(:test_repository) { FactoryBot.create(:repository) }
-  let(:test_item) { FactoryBot.create(model.name.underscore.gsub('s_controller','').to_sym) }
+  let(:test_repository) { create(:repository) }
+  let(:test_item) { create(model.name.underscore.gsub('s_controller','').to_sym) }
 
   # describe '#show' do
   #   it 'show list' do
