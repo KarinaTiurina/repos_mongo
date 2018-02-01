@@ -1,8 +1,8 @@
-class ItemScriptService
+class ItemScriptService < ItemService
+  attr_accessor :command
+
   def initialize(repository:, name:, source_file:, command:)
-    @repository = repository
-    @name = name
-    @source_file = source_file
+    super(repository, name, source_file)
     @command = command
   end
 

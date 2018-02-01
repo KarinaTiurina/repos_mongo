@@ -1,8 +1,6 @@
-class ItemFileService
+class ItemFileService < ItemService
   def initialize(repository:, name:, source_file:)
-    @repository = repository
-    @name = name
-    @source_file = source_file
+    super(repository, name, source_file)
   end
 
   def perform
