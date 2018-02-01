@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe RepositoriesController, type: :controller do
-  let(:test_repository) { FactoryBot.create(:repository) }
+  let(:test_repository) { create(:repository) }
 
   describe '#show' do
     it 'show list' do
