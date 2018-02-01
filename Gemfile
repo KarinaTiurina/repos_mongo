@@ -59,4 +59,4 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 gem 'jquery-rails'
 
-gem 'name_helper', '~> 0.1.1'
+gem 'name_helper', '~> 0.1.1', :git => 'https://github.com/KarinaTiurina/name_helper'
