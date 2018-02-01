@@ -3,18 +3,13 @@ class ItemFileService < ItemService
     super(repository, name, source_file)
   end
 
-  def perform
-    create_item_file!
-    broadcast_item_file
-  end
+  protected
 
-  private
-
-  def create_item_file!
+  def create_item!
     @item_file ||= ItemFile.create!(repository: @repository, name: @name, source_file: @source_file)
   end
 
-  def broadcast_item_file
+  def broadcast_item
     ActionCable.server.broadcast "item_file_channel_#{@repository._id}", item_file: render_item_file
   end
 

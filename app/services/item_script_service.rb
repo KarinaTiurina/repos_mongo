@@ -6,18 +6,13 @@ class ItemScriptService < ItemService
     @command = command
   end
 
-  def perform
-    create_item_script!
-    broadcast_item_script
-  end
+  protected
 
-  private
-
-  def create_item_script!
+  def create_item!
     @item_script ||= ItemScript.create!(repository: @repository, name: @name, source_file: @source_file, command: @command)
   end
 
-  def broadcast_item_script
+  def broadcast_item
     ActionCable.server.broadcast "item_script_channel_#{@repository._id}", item_script: render_item_script
   end
 

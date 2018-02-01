@@ -6,4 +6,9 @@ class ItemService
     @name = name
     @source_file = source_file
   end
+
+  def perform
+    self.create_item!
+    self.broadcast_item
+  end
 end
