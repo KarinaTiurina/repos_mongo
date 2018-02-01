@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :item_script do
     sequence (:name) { |n| "scirpt#{n}" }
 

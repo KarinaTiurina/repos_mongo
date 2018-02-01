@@ -36,7 +36,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.7'
   gem 'mongoid-rspec'
-  gem 'factory_girl_rails'
+  gem "factory_bot_rails"
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
 end
