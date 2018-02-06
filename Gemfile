@@ -57,4 +57,6 @@ gem 'mongoid', '~> 6.1.0'
 
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
-gem 'jquery-rails'
+gem 'angularjs-rails'
+
+gem 'responders'
