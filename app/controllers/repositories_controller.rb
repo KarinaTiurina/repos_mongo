@@ -1,5 +1,5 @@
 class RepositoriesController < ApplicationController
-  respond_to :json
+  # respond_to :json
 
   before_action :set_repository, only: [:show, :edit, :update, :destroy]
 
@@ -7,8 +7,8 @@ class RepositoriesController < ApplicationController
   # GET /repositories.json
   def index
     # render json: Repository.all
-    respond_with Repository.all
-    # @repositories = Repository.all
+    # respond_with Repository.all
+    @repositories = Repository.all
   end
 
   # GET /repositories/1

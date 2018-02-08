@@ -4,24 +4,24 @@
 
 <hr />
 
-<div ng-controller="RepoCtrl">
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th colspan="2"></th>
-      </tr>
-    </thead>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
 
-    <tbody>
-      <tr ng-repeat="repository in repositories">
-        <td><%= link_to '{{ repository.name }}', '{{ repository }}' %></td>
-        <td><%= link_to 'Edit', edit_repository_path('{{ repository }}') %></td>
-        <td><%= link_to 'Destroy', '{{ repository }}', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <tbody>
+    <% @repositories.each do |repository| %>
+      <tr>
+        <td><%= link_to repository.name, repository %></td>
+        <td><%= link_to 'Edit', edit_repository_path(repository) %></td>
+        <td><%= link_to 'Destroy', repository, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 
